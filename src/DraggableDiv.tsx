@@ -84,8 +84,7 @@ export function DraggableZoom(props: PropsWithChildren<object>) {
         inset: 0,
         overflow: 'hidden',
         cursor: dragging ? 'grabbing' : 'grab',
-      }}
-    >
+      }}>
       <div
         style={{
           position: 'absolute',
@@ -96,8 +95,7 @@ export function DraggableZoom(props: PropsWithChildren<object>) {
           transformOrigin: 'top left',
           filter:
             'drop-shadow(rgba(0, 0, 0, 0.1) 0px 8px 10px) drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 1px)',
-        }}
-      >
+        }}>
         {props.children}
       </div>
     </div>

@@ -17,8 +17,6 @@ export const MermaidViewer = (props: { mermaidCode: string }) => {
       const id = `mermaid-${crypto.randomUUID()}`
 
       try {
-        // Intentamos parsear primero.
-        // Mermaid v11 parse devuelve una promesa que resuelve si es válido y rechaza si no.
         await mermaid.parse(props.mermaidCode)
 
         const { svg } = await mermaid.render(id, props.mermaidCode)
@@ -44,7 +42,10 @@ export const MermaidViewer = (props: { mermaidCode: string }) => {
   return (
     <div className={styles.wrapper}>
       {error && <div className={styles.error}>{error}</div>}
-      <div ref={containerRef} className={styles.mermaidContainer} />
+      <div
+        ref={containerRef}
+        className={styles.mermaidContainer}
+      />
     </div>
   )
 }
