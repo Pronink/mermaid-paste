@@ -15,6 +15,7 @@ export const App = () => {
   const [mermaidCode, setMermaidCode] = useState<string>('')
   const [isEditorVisible, setIsEditorVisible] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string>()
+  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('darkMode') === 'true')
 
   // Load URL at startup
   useEffect(() => {
@@ -38,7 +39,7 @@ export const App = () => {
   useEffect(() => {
     if (!isEditorVisible) return
 
-    let newUrl = window.location.origin
+    let newUrl = window.location.origin + window.location.pathname
 
     if (mermaidCode) {
       newUrl += `?m=${compressToUrl(mermaidCode)}`
@@ -48,7 +49,7 @@ export const App = () => {
   }, [mermaidCode, isEditorVisible])
 
   return (
-    <div className={styles.root}>
+    <div className={`${styles.root}${isDarkMode ? ' dark-mode' : ''}`}>
       <DraggableZoom>
         <MermaidViewer mermaidCode={mermaidCode} onError={setErrorMessage} />
       </DraggableZoom>
@@ -59,6 +60,12 @@ export const App = () => {
         }
         isVisible={isEditorVisible}
         setIsVisible={setIsEditorVisible}
+        onChangeDarkMode={() => {
+          document.startViewTransition(() => {
+            localStorage.setItem('darkMode', String(!isDarkMode))
+            setIsDarkMode(!isDarkMode)
+          })
+        }}
       />
       {errorMessage && <div className={styles.error}>{errorMessage}</div>}
     </div>

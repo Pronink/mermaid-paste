@@ -2,9 +2,10 @@ import styles from './Editor.module.css'
 
 export const Editor = (props: {
   code: string
-  setIsVisible: (isVisible: boolean) => void
   isVisible: boolean
+  setIsVisible: (isVisible: boolean) => void
   onChangeCode: ((code: string) => void) | undefined
+  onChangeDarkMode: () => void
 }) => {
   return (
     <div
@@ -25,7 +26,7 @@ export const Editor = (props: {
       <button
         type="button"
         onClick={() => props.setIsVisible(!props.isVisible)}
-        className={styles.buttonOpenEditor}
+        className={styles.button + ' ' + styles.buttonOpenEditor}
         style={
           !props.isVisible ?
             {
@@ -33,7 +34,20 @@ export const Editor = (props: {
             }
             : undefined
         }>
-        {props.isVisible ? '×' : '✎'}
+        <div>{props.isVisible ? <div>×</div> : <div style={{transform: 'translateY(-1px)'}}>✎</div>}</div>
+      </button>
+      <button
+        type="button"
+        onClick={() => props.onChangeDarkMode()}
+        className={styles.button + ' ' + styles.buttonDarkMode}
+        style={
+          !props.isVisible ?
+            {
+              right: '-46px',
+            }
+            : undefined
+        }>
+        <div>◐</div>
       </button>
     </div>
   )
