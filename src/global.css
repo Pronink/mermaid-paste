@@ -13,6 +13,8 @@ body {
 :root {
   --hairline: 1px;
   --mermaid-accent: #999999;
+  --blurryness: 16px;
+  --box-shadow: 0 10px 25px 10px #0000001a;
 }
 
 @media (min-resolution: 2dppx) {
