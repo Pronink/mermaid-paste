@@ -4,6 +4,9 @@ body {
   padding: 0;
   overflow: hidden;
   background-color: #f8f8f8;
+  &:has(.dark-mode) {
+    background-color: #141414;
+  }
 }
 
 * {
@@ -13,8 +16,12 @@ body {
 :root {
   --hairline: 1px;
   --mermaid-accent: #999999;
-  --blurryness: 16px;
+  --blurryness: 20px;
   --box-shadow: 0 10px 25px 10px #0000001a;
+}
+
+.dark-mode {
+  --mermaid-accent: #676767;
 }
 
 @media (min-resolution: 2dppx) {
@@ -24,7 +31,7 @@ body {
 }
 
 html {
-  scrollbar-color: var(--mermaid-accent) #cfd7c700;
+  scrollbar-color: var(--mermaid-accent) transparent;
 }
 
 button:focus {

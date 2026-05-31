@@ -5,13 +5,17 @@
   width: 25%;
   min-width: 350px;
   height: calc(100dvh - 40px);
-  background-color: #ffffff0a;
   backdrop-filter: blur(var(--blurryness));
   box-shadow: var(--box-shadow);
   border-radius: 15px;
   corner-shape: squircle;
   transition: transform 0.75s cubic-bezier(0.68, -0.27, 0.4, 1.34);
   outline: solid var(--hairline) white;
+  background-color: #ffffff0a;
+  :global(.dark-mode) & {
+    outline: solid var(--hairline) #484848;
+    background-color: #0000000a;
+  }
 }
 
 .textarea {
@@ -27,11 +31,13 @@
   box-sizing: border-box;
   background-color: transparent;
   white-space: nowrap;
+  :global(.dark-mode) & {
+    color: #ccc;
+  }
 }
 
-.buttonOpenEditor {
+.button {
   position: fixed;
-  top: 0;
   right: -32px;
   cursor: pointer;
   transition: right 0.75s, background-color 0.2s;
@@ -45,9 +51,26 @@
   border-radius: 30px;
   corner-shape: squircle;
   box-shadow: 0 2px 5px 0 rgb(0, 0, 0, 0.3);
+}
+
+.buttonOpenEditor {
+  top: 0;
   color: white;
   background-color: var(--mermaid-accent);
   &:hover {
     background-color: #6d6d6d;
+  }
+}
+
+.buttonDarkMode {
+  top: 32px;
+  & > div {
+    transform: translateY(-1px);
+  }
+  color: white;
+  background-color: #424242;
+  :global(.dark-mode) & {
+    color: black;
+    background-color: #e5e5e5;
   }
 }
