@@ -3,9 +3,8 @@ import mermaid from 'mermaid'
 
 import styles from './MermaidViewer.module.css'
 
-export const MermaidViewer = (props: { mermaidCode: string }) => {
+export const MermaidViewer = (props: { mermaidCode: string, onError: (error: string) => void }) => {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     let isMounted = true
@@ -16,21 +15,20 @@ export const MermaidViewer = (props: { mermaidCode: string }) => {
 
       const id = `mermaid-${crypto.randomUUID()}`
 
+      const onError = props.onError
       try {
-        // Intentamos parsear primero.
-        // Mermaid v11 parse devuelve una promesa que resuelve si es válido y rechaza si no.
         await mermaid.parse(props.mermaidCode)
 
         const { svg } = await mermaid.render(id, props.mermaidCode)
 
         if (isMounted && containerRef.current) {
           containerRef.current.innerHTML = svg
-          setError(null)
+          onError('')
         }
       } catch (e: any) {
         if (isMounted) {
           console.error('Mermaid render error:', e)
-          setError(e.str || e.message || 'Syntax error in mermaid code')
+          onError(e.str || e.message || 'Syntax error in mermaid code')
         }
       }
     }
@@ -39,12 +37,10 @@ export const MermaidViewer = (props: { mermaidCode: string }) => {
     return () => {
       isMounted = false
     }
-  }, [props.mermaidCode])
+  }, [props.mermaidCode, props.onError])
 
-  return (
-    <div className={styles.wrapper}>
-      {error && <div className={styles.error}>{error}</div>}
-      <div ref={containerRef} className={styles.mermaidContainer} />
-    </div>
-  )
+  return <div
+    ref={containerRef}
+    className={styles.mermaidContainer}
+  />
 }

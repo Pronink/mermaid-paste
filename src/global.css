@@ -3,9 +3,31 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #fefefe;
+  background-color: #f8f8f8;
 }
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --hairline: 1px;
+  --mermaid-accent: #999999;
+  --blurryness: 16px;
+  --box-shadow: 0 10px 25px 10px #0000001a;
+}
+
+@media (min-resolution: 2dppx) {
+  :root {
+    --hairline: 0.5px;
+  }
+}
+
+html {
+  scrollbar-color: var(--mermaid-accent) #cfd7c700;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
 }

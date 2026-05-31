@@ -1,3 +1,18 @@
+# Open application: 
+[https://pronink.github.io/mermaid-paste/?m=compressed...](https://pronink.github.io/mermaid-paste/?m=eJyVVE1z2jAQvedXaLjnD_TGgJswnQBjoJ2cNFtJwZpYkiutmxLIf69kZOMvaOqDMdq3u29X-1bYuYS9BXVH_DPbbbarpyQlp9P9vTmSVTpP0g35QiZFDky4yShq87hYrxfLBzqdz9NkU-EziOAYIkBPMSBdbJOnAGJGI0g9RMagT8lyG3BcugKQZTWBdbqa72ZbOptuk4dV-lz7xPMqNKDYGyvfez6dyhoixnJhBScwDl4sv3smIZHHOjTs1WOlPmN_TNPkcbXbJNfQtqEwfa4qGjYXDo68GDu56_b3WP0Nj9RIWOmDKWGp5GT9rTE5tFLviVAg8_7hi7QOqQYl-pYcrhgKcO7N94P6G8waI_ftRKkEYVb4T04BK9tH9a5egynosgfOfSNcj3y_rq-DuvyPENg_ZRIPQ6Rn1j98lwVlhg_OmSk12kMsoj1_XdrVZHyedDC5TBaFz0FbJbcgTSvPofkI6VBJ6S4egkkFOUGDkFNQgfqA-HmWR8mjUCMVNJX16BfW8JLhiOVXCRrbja-JFVYy0WZU6-d4LXK_m2e1HsZHoDOmKP6gT-yYlQVKo2-QaS4kKJZ22Hd5XhbJ8SqtoeL-TStmuSyEbnipfwuNw_i3b-ENrMhM6cSNG6JGe_1q3mZx2VPH6_GGVebGd8EXNLos4oS30zR7u5sliEL5aj85iDE-WmCvQUq6VD-FHWqo0ppfR2MqYmCtjE71fccN3JtLOPwHtSZ37dbJXU9hS6UtSrWLEpgZfkP2H38BXw4knQ)
+
+---------------------
+
+---------------------
+
+---------------------
+
+---------------------
+
+---------------------
+
+---------------------
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
