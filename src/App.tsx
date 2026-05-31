@@ -38,7 +38,7 @@ export const App = () => {
   useEffect(() => {
     if (!isEditorVisible) return
 
-    let newUrl = window.location.origin
+    let newUrl = window.location.origin + window.location.pathname
 
     if (mermaidCode) {
       newUrl += `?m=${compressToUrl(mermaidCode)}`
