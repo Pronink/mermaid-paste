@@ -64,11 +64,11 @@
 }
 
 .buttonOpenEditor {
-  top: -2px;
+  top: 0;
 }
 
 .buttonDarkMode {
-  top: 30px;
+  top: 32px;
   color: white;
   /* Prevent gray leaking above box-shadow */
   background: linear-gradient(180deg, white 0%, #424242 3%, #424242 100%);
@@ -79,5 +79,5 @@
 }
 
 .buttonGithub {
-  top: 62px;
+  top: 64px;
 }
